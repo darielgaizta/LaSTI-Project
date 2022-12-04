@@ -2,7 +2,11 @@ main {
 	position: relative;
 	display: grid;
 	grid-template-columns: 20% 80%;
-	height: 100%;
+	min-height: 100vh;
+}
+
+#main-sidebar {
+	border-radius: 5px;
 }
 
 #main-content {
@@ -24,18 +28,22 @@ main {
 	height: auto;
 }
 
-.module-box, .module-btn-wrapper {
+.module-btn-wrapper {
 	text-decoration: none;
 }
 
-.module-box:hover {
-	cursor: pointer;
-}
-
-.module-dropdown-btn {
+.module-toggle {
 	float: right;
 }
 
-.content img {
+.module-toggle:hover {
+	cursor: pointer;
+}
+
+.module-content {
+	display: none;
+}
+
+.module-content img {
 	border-radius: 5px;
 }

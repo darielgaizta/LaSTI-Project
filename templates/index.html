@@ -42,51 +42,49 @@
 		</ul>
 	</div>
 	<div class="px-3" id="main-content">
-		<a href="#" class="text-dark module-box">
-			<div class="module bg-light p-3 my-3">
+		<div class="module bg-light p-3 my-3">
 				<span class="fw-bold">
 					High Fidelity Prototype
 				</span>
-				<i class="fa-solid fa-chevron-down ms-5 module-dropdown-btn"></i>
+				<i class="fa-solid fa-chevron-down ms-5 module-toggle toggle-expand" onclick="toggleModule('module-content-1')" id="expand"></i>
 				<div class="mt-2">
 					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
 				</div>
-				<div class="content mt-3">
+				<div class="module-content mt-3" id='module-content-1'>
 					<figure class="text-center">
 						<img src="{% static 'img/chapter_img.jpg' %}">
 					</figure>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<a href="#" class="module-btn-wrapper">
+					<a href="https://intip.in/ZoomnyaDariel" class="module-btn-wrapper">
 						<button class="btn btn-primary">Join Meeting</button>
 					</a>
-					<a href="#" class="module-btn-wrapper">
-						<button class="btn btn-outline-primary">Watch Live Stream</button>
+					<a href="{% url 'watch_stream' %}" class="module-btn-wrapper">
+						<button class="btn btn-outline-secondary">Watch Live Stream</button>
 					</a>
 				</div>
+		</div>
+		<div class="module bg-light p-3 my-3">
+			<span class="fw-bold">
+				Low Fidelity Prototype
+			</span>
+			<i class="fa-solid fa-chevron-down ms-5 module-toggle toggle-expand"></i>
+			<div class="mt-2">
+				<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
 			</div>
-		</a>
-		<a href="#" class="text-dark module-box">
-			<div class="module bg-light p-3 my-3">
-				<span class="fw-bold">
-					Low Fidelity Prototype
-				</span>
-				<i class="fa-solid fa-chevron-right ms-5 module-dropdown-btn"></i>
-				<div class="mt-2">
-					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
-				</div>
+		</div>
+		<div class="module bg-light p-3 my-3">
+			<span class="fw-bold">
+				Evaluation
+			</span>
+			<i class="fa-solid fa-chevron-down ms-5 module-toggle toggle-expand"></i>
+			<div class="mt-2">
+				<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
 			</div>
-		</a>
-		<a href="#" class="text-dark module-box">
-			<div class="module bg-light p-3 my-3">
-				<span class="fw-bold">
-					Evaluation
-				</span>
-				<i class="fa-solid fa-chevron-right ms-5 module-dropdown-btn"></i>
-				<div class="mt-2">
-					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
-				</div>
-			</div>
-		</a>
+		</div>
 	</div>
 </main>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/module.js' %}"></script>
 {% endblock %}

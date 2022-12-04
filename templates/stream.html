@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/stream.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+	<div class="d-flex flex-column flex-shrink-0 p-3" id="main-sidebar">
+		<a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+			<span class="fs-4">Visual Elements of User Interface Design</span>
+		</a>
+		<hr>
+		<ul class="nav nav-pills flex-column mb-auto">
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-house me-3"></i>Overview
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link active">
+					<i class="fa-solid fa-display me-3"></i>Synchronous
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-star me-3"></i>Grades
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+				<i class="fa-solid fa-book-open me-3"></i>Notes
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-layer-group me-3"></i>Forums
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="px-3" id="main-content">
+		<div class="nav-content mb-3">
+			<a href="{% url 'sync_session' %}" class="fs-5 text-decoration-none text-dark">
+				<i class="fa-solid fa-arrow-left"></i> Back
+			</a>
+		</div>
+		<div id="stream-container" class="h-100">
+			<div id="stream-video">
+				<iframe src="https://www.youtube.com/embed/wA5xpxi4Cvg" frameborder="0" allowfullscreen="1" width="100%" height="640px" style="border-radius: 5px;"></iframe>
+			</div>
+			<div id="stream-chat">
+				<div id="stream-chat-header">
+					<h1 class="fs-3">Visual Elements of User Interface Design - High Fidelity Prototype</h1>
+					<div class="stream-chat-header-tag">
+						<p>Streaming has been started 5 hours ago.<br><i class="fa-solid fa-circle text-success"></i> 109 Online</p>
+						<a href="https://intip.in/ZoomnyaDariel" id="join-meet-btn">
+							<button class="btn btn-primary">Join Meeting</button>
+						</a>
+					</div>
+				</div><hr>
+				<section id="comment">
+					<h2 class="fs-4">Comments</h2>
+					<form>
+						<div class="form-group">
+							<input type="text" name="username" placeholder="Enter your name" class="form-control my-2" required>
+							<textarea class="form-control my-2" name="comment" placeholder="Add your comment" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-outline-dark w-25 mt-2 mb-4">Submit</button>
+					</form>
+					<div class="bubble p-3 text-dark my-3">
+						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
+						<p class="bubble-message">SIIUUUUUUU!!!!</p>
+						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
+						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
+					</div>
+					<div class="bubble p-3 text-dark my-3">
+						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
+						<p class="bubble-message">SIIUUUUUUU!!!!</p>
+						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
+						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
+					</div>
+					<div class="bubble p-3 text-dark my-3">
+						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
+						<p class="bubble-message">SIIUUUUUUU!!!!</p>
+						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
+						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
