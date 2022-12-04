@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+	<div class="d-flex flex-column flex-shrink-0 p-3" id="main-sidebar">
+		<a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+			<span class="fs-4">Visual Elements of User Interface Design</span>
+		</a>
+		<hr>
+		<ul class="nav nav-pills flex-column mb-auto">
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-house me-3"></i>Overview
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link active">
+					<i class="fa-solid fa-display me-3"></i>Synchronous
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-star me-3"></i>Grades
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+				<i class="fa-solid fa-book-open me-3"></i>Notes
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-dark">
+					<i class="fa-solid fa-layer-group me-3"></i>Forums
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="px-3" id="main-content">
+		<a href="#" class="text-dark module-box">
+			<div class="module bg-light p-3 my-3">
+				<span class="fw-bold">
+					High Fidelity Prototype
+				</span>
+				<i class="fa-solid fa-chevron-down ms-5 module-dropdown-btn"></i>
+				<div class="mt-2">
+					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
+				</div>
+				<div class="content mt-3">
+					<figure class="text-center">
+						<img src="{% static 'img/chapter_img.jpg' %}">
+					</figure>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<a href="#" class="module-btn-wrapper">
+						<button class="btn btn-primary">Join Meeting</button>
+					</a>
+					<a href="#" class="module-btn-wrapper">
+						<button class="btn btn-outline-primary">Watch Live Stream</button>
+					</a>
+				</div>
+			</div>
+		</a>
+		<a href="#" class="text-dark module-box">
+			<div class="module bg-light p-3 my-3">
+				<span class="fw-bold">
+					Low Fidelity Prototype
+				</span>
+				<i class="fa-solid fa-chevron-right ms-5 module-dropdown-btn"></i>
+				<div class="mt-2">
+					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
+				</div>
+			</div>
+		</a>
+		<a href="#" class="text-dark module-box">
+			<div class="module bg-light p-3 my-3">
+				<span class="fw-bold">
+					Evaluation
+				</span>
+				<i class="fa-solid fa-chevron-right ms-5 module-dropdown-btn"></i>
+				<div class="mt-2">
+					<i class="fa-solid fa-calendar-days me-1"></i> 28 November 2022, 10:00
+				</div>
+			</div>
+		</a>
+	</div>
+</main>
+{% endblock %}
