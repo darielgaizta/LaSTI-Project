@@ -13,7 +13,7 @@ def submit_comment(request):
 	username = request.POST['username']
 	text = request.POST['text']
 	new_comment = Comment.objects.create(username=username, text=text)
-	new_message.save()
+	new_comment.save()
 	return HttpResponse('Message is sent successfully.')
 
 def get_comments(request):
