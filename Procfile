@@ -1,0 +1,1 @@
+web: gunicorn lasti_project.wsgi --log-file -
