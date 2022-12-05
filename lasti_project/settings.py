@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'lasti_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'sVbsZ3W1Pa8pEaFBPIWe',
