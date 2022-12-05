@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/stream.css' %}">
 {% endblock %}
 
+{% block jquery %}
+<script src="{% static 'js/comment.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <main>
 	<div class="d-flex flex-column flex-shrink-0 p-3" id="main-sidebar">
@@ -63,34 +67,52 @@
 				</div><hr>
 				<section id="comment">
 					<h2 class="fs-4">Comments</h2>
-					<form>
+					<form id="comment-form">
+						{% csrf_token %}
 						<div class="form-group">
-							<input type="text" name="username" placeholder="Enter your name" class="form-control my-2" required>
-							<textarea class="form-control my-2" name="comment" placeholder="Add your comment" rows="5" required></textarea>
+							<input type="text" name="username" placeholder="Enter your name" class="form-control my-2" id="username" required>
+							<textarea class="form-control my-2" name="text" placeholder="Add your comment" rows="5" id="text" required></textarea>
 						</div>
 						<button type="submit" class="btn btn-outline-dark w-25 mt-2 mb-4">Submit</button>
 					</form>
-					<div class="bubble p-3 text-dark my-3">
-						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
-						<p class="bubble-message">SIIUUUUUUU!!!!</p>
-						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
-						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
-					</div>
-					<div class="bubble p-3 text-dark my-3">
-						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
-						<p class="bubble-message">SIIUUUUUUU!!!!</p>
-						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
-						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
-					</div>
-					<div class="bubble p-3 text-dark my-3">
-						<h3 class="bubble-sender">Cristiano Ronaldo</h3>
-						<p class="bubble-message">SIIUUUUUUU!!!!</p>
-						<small class="bubble-date">19 Dec, 2022 12:00 PM</small>
-						<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
+					<div id="comments-wrapper">
+						
 					</div>
 				</section>
 			</div>
 		</div>
 	</div>
 </main>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		setInterval(function() {
+			$.ajax({
+				type: 'GET',
+				url : "/course/sync-session/stream/comments/",
+				success: function(response) {
+					// DEBUG
+					console.log(response)
+					$("#comments-wrapper").empty();
+					for (var key in response.messages) {
+						var temp = `
+							<div class="bubble p-3 text-dark my-3">
+								<h3 class="bubble-sender">`+response.messages[key].username+`</h3>
+								<p class="bubble-message">`+response.messages[key].text+`</p>
+								<small class="bubble-date">`+response.messages[key].date+`</small>
+								<small class="float-end">5 <i class="fa-solid fa-thumbs-up"></i> | 0 <i class="fa-regular fa-thumbs-down"></i></small>
+							</div>
+						`;
+						$("#comments-wrapper").append(temp);
+					}
+				},
+				error: function(response) {
+					alert("Yah error guys, maap :(");
+				}
+			});
+		}, 500);
+	});
+</script>
 {% endblock %}
