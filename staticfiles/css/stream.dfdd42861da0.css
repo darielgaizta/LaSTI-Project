@@ -1,0 +1,41 @@
+main {
+	position: relative;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	min-height: 100vh;
+}
+
+#main-sidebar {
+	border-radius: 5px;
+}
+
+#main-content {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.025);
+}
+
+.stream-chat-header-tag {
+	display: flex;
+	justify-content: space-between;
+}
+
+#stream-chat-container {
+	background-color: white;
+	border-radius: 5px;
+	max-height: 100%;
+	overflow: auto;
+}
+
+.bubble {
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid ghostwhite;
+	border-radius: 5px;
+}
+
+.bubble-sender {
+	font-size: 1em;
+}
+
+.bubble-message, .bubble-date {
+	font-size: 0.8em;
+}

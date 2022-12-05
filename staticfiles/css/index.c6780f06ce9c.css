@@ -1,0 +1,49 @@
+main {
+	position: relative;
+	display: grid;
+	grid-template-columns: 20% 80%;
+	min-height: 100vh;
+}
+
+#main-sidebar {
+	border-radius: 5px;
+}
+
+#main-content {
+	background-color: rgba(0, 0, 0, 0.025);
+}
+
+.module {
+	border: 2px solid grey;
+	border-radius: 5px;
+}
+
+.module-img-wrapper {
+	max-width: 50%;
+	margin: auto;
+}
+
+.module-img {
+	width: 100%;
+	height: auto;
+}
+
+.module-btn-wrapper {
+	text-decoration: none;
+}
+
+.module-toggle {
+	float: right;
+}
+
+.module-toggle:hover {
+	cursor: pointer;
+}
+
+.module-content {
+	display: none;
+}
+
+.module-content img {
+	border-radius: 5px;
+}
